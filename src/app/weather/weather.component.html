@@ -1,0 +1,33 @@
+<div class="container mt-3">
+  <div class="d-flex flex-column align-items-center">
+    <div class="flex-row">
+      <div class="input-group rounded mt-3">
+        <input
+          type="text"
+          placeholder="Search City"
+          name="city"
+          [(ngModel)]="cityName"
+          class="form-control "
+        />
+        <button (click)="showValue()" class="border-0 searchButton">
+          <span class="input-group-text border-0">
+            <fa-icon [icon]="searchIcon"></fa-icon>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <div class="weatherCard card text-white m-5" style="max-width: 18rem">
+      <div class="card-header text-center">
+        <h2>{{ city }}</h2>
+        <p><img src="{{ iconUrl }}" alt="weatherIcon" /></p>
+      </div>
+      <div class="card-body">
+        <p class="card-text">Summary: {{ summary }}</p>
+        <p class="card-text">Temperature: {{ temperature }} °C</p>
+        <p class="card-text">Feels Like: {{ feelsLike }} °C</p>
+        <p class="card-text">Humidity: %{{ humidity }}</p>
+      </div>
+    </div>
+  </div>
+</div>
